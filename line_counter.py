@@ -7,7 +7,7 @@ def count_lines(filename, lookup_value: str) -> int:
     :param: lookup_value: string value to lookup for within the file
     :return: int number of lines matching lookup value, or -1
     """
-    # This error try
+    # This try block run the code normally, and if no error occurs, it skips the code in the except block
     try:
         with open(filename, 'r') as file:
             lines = file.readlines()
@@ -15,7 +15,7 @@ def count_lines(filename, lookup_value: str) -> int:
                 lines = [line for line in lines if lookup_value in line]
             return len(lines)
 
-    # the except block handles the error when the file is not found
+    # This except block handles the error when the file is not found
     except FileNotFoundError: 
         return -1
 
